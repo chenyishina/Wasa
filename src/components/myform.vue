@@ -31,10 +31,8 @@
     <!-- texarea -->
     <div class="p-10 card bg-base-200">
       <div class="form-control">
-      <label class="label">
-          <span class="label-text">I want to say...</span>
-      </label>
-      <textarea class="textarea h-24" placeholder=""></textarea>
+        <h2>{{ title }}</h2>
+        <inputcomponent :text="title" @TextChange="ChangeMainText"/>
       </div>
     </div>
     <button class="btn">Submit</button>
@@ -43,8 +41,24 @@
 </template>
 
 <script>
+import inputcomponent from './inputcomponent/input.vue'
+
 export default {
-  name: 'myform'
+  name: 'myform',
+  props: {
+    title: {
+      type: String,
+      required: true
+    }
+  },
+  components: {
+    inputcomponent
+  },
+  methods: {
+    ChangeMainText (val) {
+      this.title = val
+    }
+  }
 }
 </script>
 
@@ -69,6 +83,9 @@ form{
     .input{
       margin: 10px 0;
       border-radius: 10px;
+    }
+    h2{
+      margin: 20px auto;
     }
   }
   .btn{

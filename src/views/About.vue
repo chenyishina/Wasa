@@ -48,13 +48,18 @@
         </li>
       </ul>
     </div>
-    <myform/>
+    <myform :title= "title"/>
   </div>
 </template>
 
 <script>
 import myform from '../components/myform.vue'
 export default {
+  data () {
+    return {
+      title: 'I want to say...'
+    }
+  },
   components: {
     myform
   }
