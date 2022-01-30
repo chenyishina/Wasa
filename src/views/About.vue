@@ -49,11 +49,14 @@
       </ul>
     </div>
     <myform :title.sync= "Maintitle"/>
+    <footercomponent/>
   </div>
 </template>
 
 <script>
 import myform from '../components/myform.vue'
+import footercomponent from '../components/footercomponent.vue'
+
 export default {
   data () {
     return {
@@ -61,7 +64,8 @@ export default {
     }
   },
   components: {
-    myform
+    myform,
+    footercomponent
   }
 }
 </script>

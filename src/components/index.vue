@@ -13,11 +13,29 @@
         </div>
       </div>
     </div>
+    <h1 class="comes">Who comes here</h1>
+    <div class="comingmemebr">
+      <div v-for="member in members" :key="member.name" class="card bordered">
+        <img src="https://picsum.photos/id/1005/200/200" class="mask mask-circle">
+        <div>
+          <h2 class= "bg-base-200">Name</h2>
+          <p>{{ member.name }}</p>
+        </div>
+        <div>
+          <h2 class= "bg-base-200">City</h2>
+          <p>{{ member.city }}</p>
+        </div>
+      </div>
+    </div>
+    <footercomponent/>
   </div>
 </template>
 
 <script>
+import footercomponent from '../components/footercomponent.vue'
+
 export default {
+  components: { footercomponent },
   name: 'index',
   data () {
     return {
@@ -69,6 +87,35 @@ a {
     justify-content: center;
     .card-actions{
       justify-content: center;
+    }
+  }
+}
+.comes{
+  margin-top: 40px;
+}
+.comingmemebr{
+  // border: 1px solid green;
+  display: flex;
+  justify-content: space-around;
+  margin: 50px 0;
+  @media screen and (max-width: 800px) {
+    flex-wrap: wrap;
+  }
+  img{
+    width: 80%;
+    margin: 10px auto;
+  }
+  div{
+    // border: 1px solid red;
+    margin: 10px;
+    @media screen and (max-width: 800px) {
+      flex-basis: 40%;
+    }
+    h3{
+      margin: 0;
+    }
+    h2{
+      border-radius: 5px;
     }
   }
 }
