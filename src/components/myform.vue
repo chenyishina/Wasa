@@ -1,0 +1,79 @@
+<template>
+  <div>
+    <form action="" class="card bordered">
+    <h1>Contact Me</h1>
+    <!-- input -->
+    <div class="form-control">
+      <h2>Your Email</h2>
+      <input type="text" placeholder="Yishin@gmail.com" class="input input-bordered">
+    </div>
+    <!-- label -->
+    <div class="p-6 card bordered">
+      <h2>Do you want to receive latest news?</h2>
+      <label class="cursor-pointer label opt bg-base-200">
+      <span class="label-text">Yes</span>
+      <input type="radio" class="radio" value="Yes" name="opt">
+      </label>
+      <label class="cursor-pointer label opt bg-base-200">
+      <span class="label-text">No</span>
+      <input type="radio" class="radio" value="No" name="opt">
+      </label>
+    </div>
+    <!-- select -->
+    <div>
+      <select class="select select-bordered w-full">
+      <option disabled="disabled" selected="selected">I feel...</option>
+      <option>Nice</option>
+      <option>Mmm... not bad</option>
+      <option>Need to improve!</option>
+      </select>
+    </div>
+    <!-- texarea -->
+    <div class="p-10 card bg-base-200">
+      <div class="form-control">
+      <label class="label">
+          <span class="label-text">I want to say...</span>
+      </label>
+      <textarea class="textarea h-24" placeholder=""></textarea>
+      </div>
+    </div>
+    <button class="btn">Submit</button>
+    </form>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'myform'
+}
+</script>
+
+<style lang="scss" scoped>
+h1{
+  // border: 1px solid green;
+  font-size: 30px;
+  margin-top: 20px;
+}
+form{
+  // border: 1px solid red;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-bottom: 100px;
+  div{
+    width: 90%;
+    margin: 0 auto;
+    .opt,
+    .input{
+      margin: 10px 0;
+      border-radius: 10px;
+    }
+  }
+  .btn{
+    width: 200px;
+    margin: 0 auto 50px;
+  }
+}
+</style>
