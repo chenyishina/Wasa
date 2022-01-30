@@ -32,7 +32,7 @@
     <div class="p-10 card bg-base-200">
       <div class="form-control">
         <h2>{{ title }}</h2>
-        <inputcomponent :text="title" @TextChange="ChangeMainText"/>
+        <inputcomponent :text="title" @TextChange="ChangeMainText" v-model="ChangeText"></inputcomponent>
       </div>
     </div>
     <button class="btn">Submit</button>
@@ -57,6 +57,17 @@ export default {
   methods: {
     ChangeMainText (val) {
       this.title = val
+    }
+  },
+  computed: {
+    ChangeText: {
+      get () {
+        return this.title
+      },
+      set (val) {
+        // console.log(val)
+        this.$emit('update: title', val)
+      }
     }
   }
 }

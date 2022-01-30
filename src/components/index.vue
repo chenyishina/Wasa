@@ -19,14 +19,31 @@
 <script>
 export default {
   name: 'index',
+  data () {
+    return {
+      members: []
+    }
+  },
   props: {
     msg: String
+  },
+  mounted () {
+    this.axios.get('https://mocki.io/v1/d4867d8b-b5d5-4a48-a4ab-79131b5809b8', {
+    }).then((response) => {
+      // console.log(response.data)
+      this.members = response.data
+      for (let i = 0; i < this.members.length; i++) {
+        this.name.push(this.members[i].name)
+      }
+    }).catch((error) => {
+      console.log(error)
+    })
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss" scoped>
+<style lang="scss" scoped>
 h1{
   font-size: 30px;
   margin: 20px auto;

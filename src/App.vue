@@ -35,7 +35,6 @@
   text-align: center;
   color: #ffffff;
 }
-
 #nav {
   padding: 30px;
 

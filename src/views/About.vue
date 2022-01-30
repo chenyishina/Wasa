@@ -48,7 +48,7 @@
         </li>
       </ul>
     </div>
-    <myform :title= "title"/>
+    <myform :title.sync= "Maintitle"/>
   </div>
 </template>
 
@@ -57,7 +57,7 @@ import myform from '../components/myform.vue'
 export default {
   data () {
     return {
-      title: 'I want to say...'
+      Maintitle: 'I want to say...'
     }
   },
   components: {
